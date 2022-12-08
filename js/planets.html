@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Planets</title>
+	<meta charset="utf-8">
+<script>
+window.onload = init;
+function init() {
+	var planet = document.getElementById("greenplanet");
+	planet.innerHTML = "Red Alert: hit by phaser fire!";
+    var loc = window.location.href;
+    var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+    var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+    document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+    document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+</script>
+<style>
+    @font-face {
+        font-family: "DisposableDroidBB";
+        src: url(DisposableDroidBB.ttf);
+      }
+    img {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+        height: 110%;
+        width: 100%;
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+    html {
+        height: 100%;
+        text-align: center;
+        background-image: 
+            linear-gradient(to bottom right, #000000, #0033CC, #c03feb, rgb(243, 134, 215)),
+            url("stars-trans.png");
+        background-blend-mode: screen;
+        font-family: 'disposableDroidBb';
+        font-size: 200%;
+
+    }
+</style>
+</head>
+<body>
+    <div style="position: absolute; top: -10px; left: -4px; height:100%; width:101%; z-index: 1;">
+        <img src="planets.png" alt="Planets">
+    </div>
+<div style="z-index: 2; position:relative;" >    
+    <h1>Planets</h1>
+<h2>Green Planet</h2>
+	<p id="greenplanet">All is well</p>
+	<h2>Red Planet</h2>
+	<p id="redplanet">Nothing to report</p>
+	<h2>Blue Planet</h2>
+	<p id="blueplanet">All systems A-OK</p>
+    <footer>
+        <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+        <a id="vLink2"><strong> CSS </strong> Valid! </a>
+    </footer>
+</div>
+</body>
+</html>
