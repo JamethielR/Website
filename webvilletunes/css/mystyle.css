@@ -1,0 +1,22 @@
+body {
+    margin: 4vw;
+}
+main {
+    padding: 4vw;
+    border: 2px solid rgb(0, 0, 0);
+    background-image: linear-gradient(#f9f9f9, #96fffc);
+}
+h1, footer {
+    text-align: center;
+}
+footer {
+    margin-top: 1vw;
+}
+a, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+}
+dd, dt {
+    margin-top: 0.5vw;
+}
