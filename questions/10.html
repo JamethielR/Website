@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Question 10</title>
+<style>
+h1, footer, pre, P {
+    text-align: center;
+}
+footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+table, th, td {
+  border: 1px solid black;
+  font-size: 15px;
+}
+th, td {
+  padding: 66.2px;
+}
+html {
+  height:120%;
+  background-image: linear-gradient(to bottom right, #ffffff, #88caff, #1c27fd);
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+</head>
+<body>
+<h1>Question 10</h1>
+<p>  10. JavaScript follow the mathematical precedence, which means that:</p>
+<pre>
+  a. addition takes precedence over division.
+  b. multiplication takes precedence over division.
+  c. addition takes precedence over multiplication.
+<mark>d. parenthetical expressions take precedence over multiplication.</mark>
+</pre>
+<img src="order.png" alt="alt text" width="600" class="center"/> 
+<table class="center">
+  <tr>
+    <th>1+3-2</th>
+    <th>1+4/2</th>
+    <th>4*(2+2)</th>
+    <th>5**2-1</th>
+  </tr>
+  
+  <tr>
+    <td> 
+      <script>
+      document.write(1+3-2)
+    </script> 
+  </td>
+  <td>
+    <script>
+    document.write(1+4/2)
+  </script> 
+  </td>
+  <td>
+    <script>
+    document.write(4*(2+2))
+  </script> 
+  </td>
+  <td>
+    <script>
+    document.write(5**2-1)
+  </script> 
+  </td>
+  </tr>
+</table>
+
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
