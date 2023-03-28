@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<style>
+footer, h1, h2 {
+    text-align: center;
+
+}
+footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+
+code { 
+  text-align: left;
+}
+html {
+  height:190%;
+  background-image: linear-gradient(to bottom right, #ffffff, #a3fcb7, #4ba058);
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+
+</head>
+<body>
+
+<h1>Question 11 Test C</h1>
+
+<div style="text-align: center;">
+  <div style="display: inline-block; text-align: left;">
+    <p> 11. Consider the following code: </p> 
+<pre> <code>
+  function dateTodayTomorrow(a, b) {
+    a.concat(b);
+    return a.valueOf();
+    }
+    alert(dateTodayTomorrow(“Wednesday”, “Thursday”)); </code>
+
+    What message will appear in the alert box when this script is run in the browser?
+    <mark>a. Wednesday</mark>
+    b. ThursdayWednesday
+    c. Thursday
+    d. WednesdayThursday
+  </pre>
+&nbsp; &nbsp; &nbsp; &nbsp; <script>
+  function dateTodayTomorrow(a, b) {
+    a.concat(b);
+    return a.valueOf();
+    }
+ document.write(dateTodayTomorrow("Wednesday", "Thursday"));
+</script>
+</div>
+</div>
+<br/>
+<br/>
+  
+<h2>
+Equals C
+</h2>
+<div style="text-align: center;">
+  <div style="display: inline-block; text-align: left;">
+<pre>
+  <code>
+    function dateTodayTomorrow(a, b) {
+      c = a.concat(b);
+      return c.valueOf();
+      }
+  document.write(dateTodayTomorrow("Wednesday", "Thursday"));</code>
+  </pre>
+
+&nbsp; &nbsp; <script>
+  function dateTodayTomorrow(a, b) {
+    c = a.concat(b);
+    return c.valueOf();
+    }
+document.write(dateTodayTomorrow("Wednesday", "Thursday"));
+</script>
+</div>
+</div>
+<br/>
+<br/>
+  
+<h2>
+b.valueOf();
+  </h2>
+  <div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+  <pre>
+    <code>
+      function dateTodayTomorrow(a, b) {
+        a.concat(b);
+        return b.valueOf();
+        }
+    document.write(dateTodayTomorrow("Wednesday", "Thursday"));</code>
+  </pre>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; <script>
+    function dateTodayTomorrow(a, b) {
+      a.concat(b);
+      return b.valueOf();
+      }
+  document.write(dateTodayTomorrow("Wednesday", "Thursday"));
+  </script>
+</div>
+</div>
+<br/>
+<br/>
+  
+<h2>
+Equals c and b.concat(a);
+</h2>
+<div style="text-align: center;">
+  <div style="display: inline-block; text-align: left;">
+  <pre>
+    <code>
+      function dateTodayTomorrow(a, b) {
+        c = b.concat(a);
+        return c.valueOf();
+        }
+    document.write(dateTodayTomorrow("Wednesday", "Thursday"));</code>
+  </pre>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; <script>
+    function dateTodayTomorrow(a, b) {
+      c = b.concat(a);
+      return c.valueOf();
+      }
+  document.write(dateTodayTomorrow("Wednesday", "Thursday"));
+  </script>
+</div>
+</div>
+<br/>
+<br/>
+  
+<h2>
+Combining return and concat statement 
+</h2>
+<div style="text-align: center;">
+  <div style="display: inline-block; text-align: left;">
+  <pre>
+    <code>
+      function dateTodayTomorrow(a, b) {
+        return a.concat(b).valueOf();
+        }
+    document.write(dateTodayTomorrow("Wednesday", "Thursday"));</code>
+  </pre>
+
+  &nbsp; &nbsp; &nbsp; &nbsp; <script>
+    function dateTodayTomorrow(a, b) {
+      return a.concat(b).valueOf();
+      }
+  document.write(dateTodayTomorrow("Wednesday", "Thursday"));
+  </script>
+</div>
+</div>
+<br>
+<br>
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
