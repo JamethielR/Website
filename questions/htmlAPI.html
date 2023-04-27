@@ -70,22 +70,22 @@
         background-color: aqua;
     }
 
-    </style>
-    <script>
-        function init() {
-            var loc = window.location.href;
-            var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
-            var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
-                loc + '?profile=css3';
-            document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
-            document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
-        }
-        window.onload = init;
-    </script>
+</style>
+<script>
+    function init() {
+        var loc = window.location.href;
+        var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+        var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+            loc + '?profile=css3';
+        document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+        document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+    }
+    window.onload = init;
+</script>
 </head>
 
 <body>
-    <h1>HTML5 API</h1>
+<h1>HTML5 API</h1>
     <div style="text-align: center;">
         <div style="display: inline-block; text-align: left;">
 <pre>API stands for Application Programming Interface. An API is a 
@@ -114,32 +114,32 @@ method to not tracing the user anymore.
 </pre>
 <h3>Syntax</h3><code>var loc = navigator.geolocation;</code>
 
-    <div id="container">
-        <h4>Location</h4>
-        <button type="button" onclick="geoLoc()">
-            Get Location
-        </button>
-    </div>
+<div id="container">
+    <h4>Location</h4>
+    <button type="button" onclick="geoLoc()">
+        Get Location
+    </button>
+</div>
 
-    <script>
-        var container = document.getElementById("container");
-        var pos = navigator.geolocation;
+<script>
+    var container = document.getElementById("container");
+    var pos = navigator.geolocation;
 
-        function geoLoc() {
-            if (pos)
-                pos.getCurrentPosition(getLoc);
-            else
-                container.innerHTML = "Your browser does "
-                    + "not support the Geolocation API.";
-        }
+    function geoLoc() {
+        if (pos)
+            pos.getCurrentPosition(getLoc);
+        else
+            container.innerHTML = "Your browser does "
+                + "not support the Geolocation API.";
+    }
 
-        function getLoc(loc) {
-            container.innerHTML = "Latitude: "
-                + loc.coords.latitude +
-                "<br>Longitude: " +
-                loc.coords.longitude;
-        }
-    </script>
+    function getLoc(loc) {
+        container.innerHTML = "Latitude: "
+            + loc.coords.latitude +
+            "<br>Longitude: " +
+            loc.coords.longitude;
+    }
+</script>
 
 </div>
 </div>
@@ -161,31 +161,31 @@ where you can drag an item from one place and drop it in another.
 </div>
 </div>
 
-    <div id="space">
-        <p>Drag image into the container</p>
+<div id="space">
+    <p>Drag image into the container</p>
 
 
-        <div id="drop" ondrop="dropItem(event)" ondragover="droppable(event)"></div>
+    <div id="drop" ondrop="dropItem(event)" ondragover="droppable(event)"></div>
 
-        <img src="https://www.gardeningknowhow.com/wp-content/uploads/2019/09/flower-color.jpg" alt="flower"
-            id="image" draggable="true" ondragstart="dragItem(event)">
-    </div>
+    <img src="https://www.gardeningknowhow.com/wp-content/uploads/2019/09/flower-color.jpg" alt="flower"
+        id="image" draggable="true" ondragstart="dragItem(event)">
+</div>
 
-    <script>
-        function droppable(e) {
-            e.preventDefault();
-        }
+<script>
+    function droppable(e) {
+        e.preventDefault();
+    }
 
-        function dragItem(e) {
-            e.dataTransfer.setData("text", e.target.id);
-        }
+    function dragItem(e) {
+        e.dataTransfer.setData("text", e.target.id);
+    }
 
-        function dropItem(e) {
-            e.preventDefault();
-            var content = e.dataTransfer.getData("text");
-            e.target.appendChild(document.getElementById(content));
-        }
-    </script>
+    function dropItem(e) {
+        e.preventDefault();
+        var content = e.dataTransfer.getData("text");
+        e.target.appendChild(document.getElementById(content));
+    }
+</script>
 
 
 <div style="text-align: center;">
