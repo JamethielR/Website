@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        footer {
+            text-align: center;
+            color: #555;
+        }
+
+        footer>a, footer>a:visited {
+            text-decoration: none;
+            color: #555;
+        }
+
+        body {
+            background-image: url(https://d3itmjxbj69sp9.cloudfront.net/images/_1520xAUTO_fit_center-center_none/wood-1759566_1280.webp);
+            background-repeat: repeat;
+            background-size: 100%;
+            color: aqua;
+            font-size: 2vw;
+            text-align: center;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #drop {
+            height: 18vw;
+            width: 18vw;
+            border: 0.2vw solid rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+        }
+        #btnDiv {
+            width: 20vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+ 
+        .btn {
+            cursor: pointer;
+        }
+        button {
+            height: 10vw;
+            width: 18vw;
+            font-size: 3vw;
+        }
+        img {
+            height: 18vw;
+            width: 18vw; 
+        }
+        input, output {
+            font-size: 2vw;
+        }
+
+    </style>
+    <script>
+        function init() {
+            var loc = window.location.href;
+            var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+            var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                loc + '?profile=css3';
+            document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+            document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+        }
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <h1>HTML5 API</h1>
+    <div style="text-align: center;">
+        <div style="display: inline-block; text-align: left;">
+            <pre>API stands for Application Programming Interface. An API is a 
+set of pre-built programs that can be used with the help of 
+JavaScript. APIs are used to implement already written code to 
+fulfill the needs of the project you are working on.
+
+
+<h3>HTML Geolocation API:</h3>The Geolocation API is used to get the current 
+location of the user or the page visitor. It will show the user’s 
+location only if the user allows it to do so, as it compromises the 
+security and privacy of the user.
+
+
+<h4>Methods available in Geolocation API:</h4>getCurrentPosition() Method: The getCurrentPosition() method returns 
+an object with properties such as latitude, longitude, 
+accuracy, altitude etc.
+
+watchPosition() Method: This method will return the current position 
+of the user as well as the updated location when the position of the 
+user changes or the user travels from one location to another location.
+
+clearWatch() Method: This method will stop the watchPosition() 
+method to not tracing the user anymore.
+
+<h3>Syntax</h3><code>var loc = navigator.geolocation;</code>
+</pre>
+
+    <div id="container">
+        <h4>Location</h4>
+        <button type="button" onclick="geoLoc()">
+            Get Location
+        </button>
+    </div>
+
+    <script>
+        var container = document.getElementById("container");
+        var pos = navigator.geolocation;
+
+        function geoLoc() {
+            if (pos)
+                pos.getCurrentPosition(getLoc);
+            else
+                container.innerHTML = "Your browser does "
+                    + "not support the Geolocation API.";
+        }
+
+        function getLoc(loc) {
+            container.innerHTML = "Latitude: "
+                + loc.coords.latitude +
+                "<br>Longitude: " +
+                loc.coords.longitude;
+        }
+    </script>
+
+</div>
+</div>
+   
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+    <pre>
+
+
+
+<h2>Drag and Drop API:</h2>
+HTML Drag and Drop API: Drag and Drop is a common feature nowadays, 
+where you can drag an item from one place and drop it in another.
+
+
+<h3>Syntax</h3><code>draggable="true"
+ </code> </pre>
+
+</div>
+</div>
+
+    <div id="container">
+        <p>Drag image into the container</p>
+
+
+        <div id="drop" ondrop="dropItem(event)" ondragover="droppable(event)"></div>
+
+        <img src="https://www.gardeningknowhow.com/wp-content/uploads/2019/09/flower-color.jpg" alt="flower"
+            id="image" draggable="true" ondragstart="dragItem(event)">
+    </div>
+
+    <script>
+        function droppable(e) {
+            e.preventDefault();
+        }
+
+        function dragItem(e) {
+            e.dataTransfer.setData("text", e.target.id);
+        }
+
+        function dropItem(e) {
+            e.preventDefault();
+            var content = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(content));
+        }
+    </script>
+
+
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+    <pre>
+    
+    
+<h2>HTML Web Storage API:</h2><pre>
+HTML Web Storage API: HTML web storage API is used to store the data 
+on the web browser.Early, the data was stored in the form of cookies 
+that can store a small amount of data and can-not transferred further 
+to the server. But, HTML5 introduces us to the Web Storage API that 
+can store large data as compared to cookies and can be transferred 
+to the server. Using this API for storing data is more secure than 
+using cookies.
+
+
+Web storage API provides us with two objects to work with:
+    
+window.sessionStorage: This object temporarily stores the data on 
+the web browser such that if the browser is refreshed or closed the 
+data stored will be lost.
+    
+window.localStorage: localStorage permanently stores the data on the 
+browser with no expiration such that will not be lost even if the browser 
+is refreshed.
+
+
+
+<h2>File API:</h2>HTML5 File API aspect provides an API for representing file objects 
+in web applications and programmatic selection and accessing their data. 
+In addition, this specification defines objects to be used within threaded 
+web applications for the synchronous reading of files. The File API 
+describes how interactions with files are handled, for reading 
+information about them and their data as well, to be able to upload it.</pre>
+<div> <input type="file" id="files"> <output id="list"></output>
+<script>
+if (window.FileReader) {
+    function handleFileSelect(evt) {
+      var files = evt.target.files;
+      var f = files[0];
+      var reader = new FileReader();
+      
+        reader.onload = (function(theFile) {
+          return function(e) {
+            document.getElementById('list').innerHTML = ['<img src="', e.target.result,'" title="', theFile.name, '" width="1000"/>'].join('');
+          };
+        })(f);
+  
+        reader.readAsDataURL(f);
+    }
+   } else {
+    alert('This browser does not support FileReader');
+  }
+  
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+</div>
+  
+</div>
+    </div>
+
+
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+<h2>Questions</h2>
+<pre>
+
+6C. Which technology provides browsers with 
+functionality that previously required 
+users to install proprietary plug-ins?
+a. PHP
+b. ECMA<mark>
+c. HTML5 APIs</mark>
+d. Java applets
+
+
+8C. Experts in Web technology expect 
+that the future of Web development 
+will rely heavily on:
+a. Java applets
+b. Android mobile devices
+c. Apple mobile devices<mark>
+d. HTML5 APIs</mark>
+
+
+35B.Which of the following is a function of the HTML5 File API?<mark>
+a. Create preview thumbnail images during the image uploads.</mark>
+b. Locate the position of the client system.
+c. Validate HTML5 code.
+d. Move files using a drop zone. 
+			
+						
+38.HTML5 APIs can be used to create:
+a. databases on remote servers.
+b. scripts that send email messages.<mark>
+c. apps for mobile devices.</mark>	
+d. embedded and external style sheets. 
+
+</pre>
+
+</div>
+</div>
+    <footer>
+        <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+        <a id="vLink2"><strong> CSS </strong> Valid! </a>
+    </footer>
+</body>
+
+</html>
