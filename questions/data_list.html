@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<style>
+h1, footer {
+    text-align: center;
+}
+footer, footer>a, footer>a:visited {
+    text-decoration: none;
+    color: #555;
+}
+body {
+    background-image: url(https://d3itmjxbj69sp9.cloudfront.net/images/_1520xAUTO_fit_center-center_none/wood-1759566_1280.webp);
+    background-repeat: repeat;
+    background-size: 100%;
+    color: #00ffff;
+    font-size: 2vw;
+    text-align: center;
+}
+</style>
+<script>
+function init() {
+  var loc = window.location.href;
+  var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+  var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                        loc + '?profile=css3';
+  document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+  document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+</head>
+<body>
+
+<h1>Data List</h1>
+
+<pre>
+The datalist tag specifies a list of pre-defined options for an input element.
+
+The datalist tag is used to provide an "autocomplete" feature for input elements. 
+Users will see a drop-down list of pre-defined options as they input data.
+    
+The datalist element's id attribute must be equal to the input element's 
+list attribute (this binds them together).
+
+</pre>
+
+
+<label for="color">Choose text color from the list:</label>
+
+<input onchange="color_change()" type="color" id="change_color" value="#00ffff" list="colors" />
+            
+  <datalist id="colors">
+    <option>#00ffff</option>
+    <option>#ff1100</option>
+    <option>#03fc13</option>
+    <option>#0362fc</option>
+    <option>#ffffff</option>
+    <option>#bf00ff</option>
+  </datalist>
+
+<script>
+
+    function color_change() {
+      var x = document.getElementById("change_color").value;
+      document.body.style.color = x;
+    }
+</script>
+
+
+<footer>
+<a id="vLink1"><strong> HTML </strong> Valid! </a> |
+<a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
